@@ -1,4 +1,3 @@
-alert("jo");
 //arrays
 var buttonColors = ["red","green","blue","yellow"];
 var gamePattern = [];
