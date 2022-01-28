@@ -1,38 +1,58 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.AppHeader {
+	color: #FFF;
+	text-align: center;
+	font-size: 40px;
+	background-color: #111;
+}
+
 .App {
-  text-align: center;
+	background-color: #333;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AppBody {
+	background-color: black;
+	width:100%;
+	height: 100%;
+	
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TextArea {
+	background-color: #000;
+	border: none;
+	outline: none;
+	width: 100%;
+	height: 90%;
+	color: #FFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.AddIcon {
+	font-size: 40px;
+	font-weight: 300;
 }
 
-.App-link {
-  color: #61dafb;
+.AddFab {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.FabInput {
+	display: none;
+}
+
+.TextImage {
+	display: none;
 }
