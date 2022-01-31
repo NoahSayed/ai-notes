@@ -4,3 +4,20 @@ body {
     font-family: "Epilogue",sans-serif;
     font-weight: 200;
 }
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat-Light";
+  }
+  
+.footerclass{
+    background-color: #262626;
+   
+}
+.ainote{
+    text-align: center;
+    font-family: "Montserrat-Light";
+    border-color: aliceblue;
+    border-style: solid;
+   
+}
