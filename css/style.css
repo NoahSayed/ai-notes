@@ -10,14 +10,8 @@ body {
     font-family: "Montserrat-Light";
   }
   
-.footerclass{
-    background-color: #262626;
-   
-}
-.ainote{
-    text-align: center;
-    font-family: "Montserrat-Light";
-    border-color: aliceblue;
-    border-style: solid;
-   
+.main-content {
+    background-color: #181b16;
+    color: antiquewhite;
+    font-size: 1.5rem;
 }
