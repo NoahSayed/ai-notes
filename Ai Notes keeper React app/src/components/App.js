@@ -3,11 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 
+function createcard
 function App() {
   return (
     <div>
       <Header />
-      <Note />
+      {notes.map(createCard)}
       <Footer />
     </div>
   );
