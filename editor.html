@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="An AI powered note-taking app" />
+		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="main.css" />
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+		<title>AI Notes</title>
+	</head>
+	<body>
+
+		<div class="App">
+			<div class="AppHeader">
+				<i>AI Notes</i>
+			</div>
+			<div class="AppBody">
+			<textarea type="text"
+				class="TextArea"
+				id="textarea"
+				placeholder="Start typing here..."
+				oninput="handleTextAreaChange()"
+			></textarea>
+
+			<img id="TextImage" class="TextImage"/>
+
+			<div id="AskFab" class="Fab" style="bottom:100px;display:none;">
+                <button class="mdc-fab" aria-label="Ask" style="background:#FFF" onclick="ask()">
+					<label style="height:100%;width:100%;">
+						<span class="mdc-fab__icon material-icons" style="color:#000;height:100%;font-size:30px;">question_answer</span>
+					</label>
+                </button>
+            </div>
+
+			<div id="AddFab" class="Fab" style="bottom:25px">
+				<button class="mdc-fab" aria-label="Add" style="background:#FFF">
+					<label style="height:100%;width:100%;">
+						<input type="file" class="FabInput" onchange="handleImageChange(event)"/>
+						<span class="mdc-fab__icon material-icons" style="color:#000;height:100%;font-size:30px;">add</span>
+					</label>
+				</button>
+			</div>
+
+<!--
+			<div class="AddFab">
+				<Fab>
+					<label>
+						<input type="file"
+							class="FabInput"
+							onChange={this.handleImageChange}
+						/>
+						<div class="AddIcon">+</div>
+					</label>
+				</Fab>
+			</div>
+-->
+<!--
+			<div class="AddFab">
+				<div class="Fab">
+					<label>
+						<input type="file" class="FabInput"/>
+						<div class="AddIcon">+</div>
+					</label>
+				</div>				
+			</div>
+-->
+
+		</div>
+	</div>
+
+	<script>
+
+		function handleTextAreaChange(e) {
+			this.scrollTop = this.scrollHeight;
+		}
+
+		function handleImageChange(e) {
+			if (e.target.files && e.target.files[0]) {
+				var img = document.getElementById("TextImage");
+				img.onload = imageIsLoaded;
+				img.src = URL.createObjectURL(e.target.files[0]);
+			}
+		}
+
+		function imageIsLoaded(e) {
+			detectText(this);
+		}
+
+		async function detectText(image) {
+			if (window.TextDetector) {
+				var textDetector = new window.TextDetector();
+				var passage = "";
+
+				textDetector.detect(image)
+				.then(detectedTextBlocks => {
+					for (const textBlock of detectedTextBlocks) {
+						passage += " " + textBlock.rawValue;
+					}
+					document.getElementById("textarea").value += "\n" + passage.trim() + "\n";
+				}).catch((err) => {
+					console.error("Text Detection Failed");
+					console.error(err);
+				});
+			}
+		}
+
+		var model;
+
+		async function loadBERTqna() {
+			console.log("loading model");
+			model = await qna.load();
+			console.log("model loaded");
+			document.getElementById("AskFab").style.display = "block";
+		};
+
+		async function predict(question, passage) {
+			console.log("predicting");
+			answers = await model.findAnswers(question, passage);
+			if (answers.length > 0) {
+				console.log(answers);
+				alert(answers[0].text);
+			}
+			else {
+				console.log(answers);
+				alert("No Answer Found");
+			}
+		};
+
+		loadBERTqna();
+
+		function ask() {
+			var passage = document.getElementById("textarea").value.trim();
+			if (passage == "")
+				alert("No Text Found");
+			else {
+				question = prompt("Enter your question");
+				if (question != null && question != undefined && question.trim() != "")
+					predict(question, passage);
+			}
+		}
+
+	</script>
+  </body>
+</html>
