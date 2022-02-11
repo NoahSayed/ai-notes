@@ -22,23 +22,29 @@ body {
     position: relative;
 }
 
+header{
+    background-color: transparent;
+}
+
 .navbar {
     width: 100%;
     height: 15vh;
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
 }
 
-.logo {
-    width: 200px;
+.nav-menu{
+    display: flex;
+}
+
+.nav-branding {
+    width: 350px;
     cursor: pointer;
 }
 
-nav {
-    flex: 1;
-    padding-left: 60px;
-}
 
 nav ul li{
     display: inline-block;
@@ -50,6 +56,21 @@ nav ul li{
 nav ul li a {
     text-decoration: none;
     color: #333;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #000;
 }
 
 .content h1 {
@@ -202,8 +223,49 @@ button:active {
     }
 }
 
+@media screen and (max-width:950px){
+    .hamburger{
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align:justify;
+        transition: 0.3s;
+    }
+    
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
 @media screen and (max-width:550px) {
      .memory-img{
          display: none;
+     }
+
+     .nav-branding{
+         height: 70px;
+         width: 200px;
      }
 }

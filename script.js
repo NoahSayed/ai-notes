@@ -1,3 +1,5 @@
+
+// for quote generator 
 const quoteContainer = document.querySelector("#quoteContainer");
 const quoteText = document.querySelector("#quote");
 const authorText = document.querySelector("#author");
@@ -21,7 +23,7 @@ async function getQuote() {
   showLoadingSpinner();
   const proxyUrl = "https://jacinto-cors-proxy.herokuapp.com/";
   const apiUrl =
-    "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
+  "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
   try {
     const response = await fetch(proxyUrl + apiUrl);
     const data = await response.json();
@@ -38,7 +40,7 @@ async function getQuote() {
       quoteText.classList.remove("longQuote");
     }
     quoteText.innerText = data.quoteText;
-
+    
     removeLoadingSpinner();
   } catch (error) {
     getQuote;
@@ -59,3 +61,19 @@ twitterBtn.addEventListener("click", tweetQuote);
 
 // On load
 getQuote();
+
+
+
+// for navbar 
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+})
+
+document.querySelectorAll('.nav-link'.foreach(n => n.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+})))
