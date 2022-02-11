@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
 body {
   text-align: center;
   background: url(../Images/Background-img.jpg);
+  font-family: Montserrat,sans-serif;
+  background-position: center;
+  background-size: cover;
 }
 
 #level-title {
   font-size: 3rem;
   margin:  5%;
-  color: #5b71df;
+  color: #000;
 }
 
 .container {
