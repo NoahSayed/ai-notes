@@ -37,19 +37,19 @@ body {
 }
 
 .red {
-  background-color: #f05555;
+  background-color: #f74242;
 }
 
 .green {
-  background-color: rgb(89, 211, 89);
+  background-color: #3fec3f;
 }
 
 .blue {
-  background-color: rgb(76, 76, 214);
+  background-color: #4848e4;
 }
 
 .yellow {
-  background-color: rgb(235, 235, 82);
+  background-color: #e9e942;
 }
 
 .pressed {
