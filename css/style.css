@@ -180,7 +180,19 @@ button:active {
 
 /* media queries  */
 
+@media screen and (max-width:1250px) {
+    .memory-img{
+    height: 40%;
+    position: absolute;
+    bottom: 2rem;
+    right: 10rem;
+    }
+
+}
+
+
 @media screen and (max-width:1000px) {
+
     .quoteContainer {
         margin: auto 10px;
     }
@@ -188,4 +200,10 @@ button:active {
     .quoteText{
         font-size: 2.5rem;
     }
+}
+
+@media screen and (max-width:550px) {
+     .memory-img{
+         display: none;
+     }
 }
