@@ -70,8 +70,8 @@
 			</div>
 -->
 
+			</div>
 		</div>
-	</div>
 
 	<script>
 
@@ -123,11 +123,18 @@
 			answers = await model.findAnswers(question, passage);
 			if (answers.length > 0) {
 				console.log(answers);
-				alert(answers[0].text);
+				//alert(answers[0].text);
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = answers[0].text;
+				window.speechSynthesis.speak(msg);
 			}
 			else {
 				console.log(answers);
-				alert("No Answer Found");
+				//alert("No Answer Found");
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = "No Answer Found";
+				window.speechSynthesis.speak(msg);
+
 			}
 		};
 
