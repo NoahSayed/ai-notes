@@ -8,10 +8,10 @@
 		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="editor.css" />
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
-		<title>AI Notes</title>
+		<title>AI Notes Editor</title>
 	</head>
 	<body>
 
@@ -70,8 +70,8 @@
 			</div>
 -->
 
+			</div>
 		</div>
-	</div>
 
 	<script>
 
@@ -123,11 +123,18 @@
 			answers = await model.findAnswers(question, passage);
 			if (answers.length > 0) {
 				console.log(answers);
-				alert(answers[0].text);
+				//alert(answers[0].text);
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = answers[0].text;
+				window.speechSynthesis.speak(msg);
 			}
 			else {
 				console.log(answers);
-				alert("No Answer Found");
+				//alert("No Answer Found");
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = "No Answer Found";
+				window.speechSynthesis.speak(msg);
+
 			}
 		};
 

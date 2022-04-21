@@ -6,33 +6,73 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Notes</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+      <!-- font awesome  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <!-- external css  -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="navbar">
-      <img src="./Images/AI-logo.png" class="logo" alt="AI-logo">
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Notes</a></li>
-          <li><a href="#">Contact</a></li>
+  <div class="container-main">
+
+    <header>
+      <nav class="navbar">
+      <img src="./Images/AI-logo.png" class="nav-branding" alt="AI-logo">
+        <ul class="nav-menu">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="./notes.html">Notes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
-    </div>
+    </header>
+    
 
     <div class="content">
       <h1>Let's reduce <br> your stress</h1>
       <p>Helps with memory too.</p>
-      <a href="./Memory game/game.html" class="btn">Memory Game</a>
+   <button><a href="./Memory game/game.html" class="btn">Memory Game</a></button>
     </div>
 <div class="memory"><img src="./Images/Memory-game-logo.png" class="memory-img" alt="Memory-logo"></div>
     
-
-
   </div>
+
+  <!-- quote generator  -->
+
+  <div class="quotePage">
+  <div class="quoteContainer" id="quoteContainer">
+    <!-- quote  -->
+    <div class="quoteText">
+      <i class="fas fa-quote-left"></i>
+      <span id="quote"></span>
+    </div>
+    <!-- author  -->
+    <div class="quoteAuthor">
+      <span id="author"></span>
+    </div>
+    <!-- button  -->
+    <div class="buttonContainer">
+      <button class="twitterButton" id="twitter" title="Tweet this!">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button id="newQuote">
+        New Quote
+      </button>
+    </div>
+  </div>
+
+      <div class="loader" id="loader">
+      </div>
+      </div>
+
+      <script src="script.js"></script>
 </body>
 
 </html>
