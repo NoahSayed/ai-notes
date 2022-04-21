@@ -1,6 +1,16 @@
 body {
   text-align: center;
   background: url(../Images/Background-img.jpg);
+    height: 100vh;
+    width: 100%;
+    background:url(../Images/Background-img.jpg);
+    background-position:center;
+    background-size: cover;
+    
+   
+    box-sizing:border-box;
+    position: relative;
+
 }
 
 #level-title {
@@ -17,12 +27,11 @@ body {
 }
 
 .btn {
-  margin: 25px;
+  
   display: inline-block;
   height: 200px;
   width: 200px;
-  border: 5px solid black;
-  border-radius: 25%;
+  
 }
 
 .game-over {
@@ -31,20 +40,31 @@ body {
 }
 
 .red {
-  background-color: #f05555;
+  background-image: url("../Images/red.png");
+  background-position: 1000px;
+  width: 300px;
 }
 
 .green {
-  background-color: rgb(89, 211, 89);
+  background-image: url("../Images/green.png");
+  background-position: 1000px;
 }
 
 .blue {
-  background-color: rgb(76, 76, 214);
+
+  
+  background-image: url("../Images/blue.png");
+  background-position: 1000px;
+
 }
 
 .yellow {
   background-color: rgb(235, 235, 82);
+  background-image: url("../Images/yellow.png");
+  background-position: 1000px;
+
 }
+
 
 .pressed {
   box-shadow: 0 0 20px white;
