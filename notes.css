@@ -5,10 +5,10 @@ html {
 }
 
 :root {
-  --column-1: #ff6f00;
+  --column-1: #67f0f0;
   --column-2: #67f0f0;
-  --column-3: #248224;
-  --column-4: #efff44;
+  --column-3: #67f0f0;
+  --column-4: #67f0f0;
 }
 
 body {
@@ -28,7 +28,7 @@ h1 {
   
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px black;
-    background-color: #f5ba13;
+    background-color: #ffde0a;
     margin: auto -16px;
     padding: 13px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -141,9 +141,12 @@ ul {
 }
 
 .drag-item {
-   
+  text-shadow: 0px 0px 30px #e6d9a1,0px 0px 30px #e6d9a1,0px 0px 30px #e6d9a1,0px 0px 10px #ffffff,0px 0px 10px ;
+
+   font-size: 22px;
+   font-style: italic;
   color:black;
-  margin: 10px;
+  margin: 10px;       
   padding: 10px;
   border-radius: 10px;
   line-height: 1.5rem;
