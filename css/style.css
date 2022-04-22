@@ -16,14 +16,14 @@ body {
     background:url(../Images/Background-img.jpg);
     background-position:center;
     background-size: cover;
-    padding-left: 5%;
-    padding-right: 5%;
     box-sizing:border-box;
     position: relative;
 }
 
 header{
     background-color: transparent;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .navbar {
