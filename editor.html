@@ -15,7 +15,7 @@
 		 <link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-
+  
 		 <header>
 		 	<nav class="navbar">
 		 		<img src="./Images/AI-logo.png" class="nav-branding" alt="AI-logo">
@@ -42,7 +42,7 @@
 				class="TextArea"
 				id="textarea"
 				placeholder="Start typing here..."
-				oninput="handleTextAreaChange()"
+				oninput="handleTextAreaChange(this)"
 			></textarea>
 
 			<img id="TextImage" class="TextImage"/>
@@ -93,8 +93,13 @@
 
 	<script>
 
+		if(localStorage.text) {
+			document.getElementById("textarea").value = localStorage.text;
+		}
+
 		function handleTextAreaChange(e) {
 			this.scrollTop = this.scrollHeight;
+			localStorage.text = e.value;
 		}
 
 		function handleImageChange(e) {
