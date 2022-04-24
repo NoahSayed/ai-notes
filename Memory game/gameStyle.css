@@ -43,27 +43,24 @@ body {
 }
 
 .red {
-  background-image: url("../Images/red.png");
   background-position: 1000px;
   width: 300px;
 }
 
 .green {
-  background-image: url("../Images/green.png");
   background-position: 1000px;
 }
 
 .blue {
 
-  
-  background-image: url("../Images/blue.png");
+  background-color: rgb(235, 235, 82);
+
   background-position: 1000px;
 
 }
 
 .yellow {
   background-color: rgb(235, 235, 82);
-  background-image: url("../Images/yellow.png");
   background-position: 1000px;
 
 }
