@@ -17,7 +17,7 @@ body {
 }
 
 #level-title {
-  font-size: 3rem;
+  font-size: 7rem;
   margin:  5%;
   color: #000;
 }
@@ -25,7 +25,8 @@ body {
 .container {
   display: block;
   width: 50%;
-  margin: auto;
+  position: relative;
+  left: 22rem;
 
 }
 
@@ -43,25 +44,41 @@ body {
 }
 
 .red {
+  background-color: rgb(255, 114, 114);
+  border-radius: 7px;
+  box-shadow: 7px 5px 3px 4px rgb(202, 68, 68);
   background-position: 1000px;
-  width: 300px;
+   margin: 30px;
+   margin-bottom: 15px;
 }
 
 .green {
+  background-color: rgb(54, 246, 54);
+  box-shadow: 7px 5px 3px 4px rgb(109, 255, 51);
+ 
+  border-radius: 7px;
+  position: relative;
+  top: -50px;
+
   background-position: 1000px;
 }
 
 .blue {
-
-  background-color: rgb(235, 235, 82);
+ border-radius: 7px;
+  background-color: rgb(78, 78, 200);
+  box-shadow: 7px 5px 3px 4px rgb(93, 108, 222);
 
   background-position: 1000px;
 
 }
 
 .yellow {
+    box-shadow: 7px 5px 3px 4px rgb(234, 220, 29);
+    margin: 30px;
+
   background-color: rgb(235, 235, 82);
   background-position: 1000px;
+  border-radius: 7px;
 
 }
 
