@@ -10,7 +10,7 @@ ul {
 }
 .sec-title .title {
   position: relative;
-  color: #00b8ca;
+  color: #000000;
   font-size: 18px;
   font-weight: 700;
   padding-right: 50px;
@@ -46,7 +46,7 @@ ul {
 .contact-page-section .inner-container {
   position: relative;
   z-index: 1;
-  background-color: #00b8ca;
+  background-color: #000000;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
 }
 .contact-page-section .form-column {
@@ -133,10 +133,9 @@ ul {
   font-weight: 700;
   margin-top: 10px;
   text-transform: capitalize;
-  padding: 16px 39px;
-  border: 2px solid #00b8ca;
+  border: 2px solid #000000;
   font-family: Arimo, sans-serif;
-  background: #00b8ca;
+  background: #000000;
   display: inline-block;
   position: relative;
   line-height: 24px;
@@ -144,8 +143,8 @@ ul {
   color: #fff;
 }
 .contact-form .theme-btn:hover {
-  color: #00b8ca;
-  border-color: #00b8ca;
+  color: #ffffff;
+  border-color: #000000;
   background: 0 0;
 }
 .contact-form input.error,
@@ -189,5 +188,5 @@ ul {
   transition: all 0.3s ease;
 }
 .social-icon-four li a:hover {
-  color: #222;
+  color: rgb(106, 106, 106);
 }
